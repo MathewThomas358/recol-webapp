@@ -1,0 +1,27 @@
+{% extends 'recol/index.html' %}
+{% block content %}
+<hr>
+<br>
+<h2 align="center" style="font-family: 'Gugi', cursive;">Classify</h2>
+<br>
+<br>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div style="text-align:center">
+      <input name="classify" type="submit" value="Classify" style="align: center; background-color: #ff9028;  border: none;  color: white;  padding: 16px 32px;  text-decoration: none;  margin: 4px 2px;  cursor: pointer;">
+  </div>
+
+</form>
+<br>
+{% if messages %}
+    {% for message in messages %}
+    <div class="jumbotron" style="padding-left: 100px; padding-right: 100px;">
+      <h4 align="center">{{message}}</h>
+    </div>
+    {% endfor %}
+{% endif %}
+
+<div class="upload-btn-wrapper center container tc" style="text-align:center">
+    <a href="/"> <button type="button" class="btn btn-outline-warning" style="padding: 25px 70px;"> Home </button> </a>
+</div>
+{% endblock %}

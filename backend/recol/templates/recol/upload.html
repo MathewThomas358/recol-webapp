@@ -1,0 +1,41 @@
+{% extends 'recol/index.html' %}
+{% block content %}
+<hr>
+  <br>
+  <h1 align="center" style="font-family: 'Gugi', cursive;">Upload</h1>
+  <br>
+  <br>
+  <br>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="upload-btn-wrapper center container" style="text-align:center">
+
+      <!-- <input align="middle" type="button" id="loadFileXml" value="Select an Image" onclick="document.getElementById('file').click();" />
+      <input type="file" align="middle" style="display:none;" id="file" name="test_image"/> -->
+      <label style="padding: 10px;    background: #ff9028;    color: #fff; "> Select an Image
+        <input type="file" name="test_image" style="display:none;" size="60" accept="image/*">
+      </label>
+      <br>
+      <br>
+
+      <button class="btn btn-outline-warning" type="submit" style="padding: 30px; font-family: 'Gugi'; size: 20px;">Upload the Image</button>
+      <br>
+      <br>
+
+
+
+    </div>
+  </form>
+  {% if messages %}
+      {% for message in messages %}
+      <div class="jumbotron" style="padding-left: 100px; padding-right: 100px;">
+        <h4 align="center">{{message}}</h4>
+      </div>
+
+      {% endfor %}
+  {% endif %}
+  <div class="upload-btn-wrapper center container tc" style="text-align:center">
+      <a href="/classify"> <button type="button" class="btn btn-outline-warning" style="padding: 25px 60px; font-family: 'Gugi'; size: 30px;">    Submit    </button> </a>
+  </div>
+
+{% endblock %}
