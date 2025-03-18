@@ -41,8 +41,8 @@ networkx==2.3
 numpy==1.22.0
 oauth==1.0.1
 olefile==0.45.1
+opencv-python==4.2.0.32
 opencv-contrib-python==4.2.0.32
-opencv-python==4.1.0.25
 pexpect==4.2.1
 protobuf==3.18.3
 Pillow==9.3.0
